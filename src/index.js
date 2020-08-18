@@ -1,27 +1,70 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
+import React from "react";
+import ReactDOM from "react-dom";
+import moment from 'moment';
+import "./index.css";
 
-class Square extends React.Component {
+class ShoppingList extends React.Component {
   render() {
     return (
-      <button className="square">
-        {/* TODO */}
+      <div className="shopping-list">
+        <h1>Shopping List for {this.props.name}</h1>
+        <ul>
+          <li>Instagram</li>
+          <li>WhatsApp</li>
+          <li>Oculus</li>
+          <li>私はこれから東京に行こうとおもっています</li>
+        </ul>
+      </div>
+    );
+  }
+}
+
+class Square extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: null,
+    };
+  }
+  render() {
+    return (
+      <button className="square" onClick={() => this.props.onClick()}>
+        {this.props.value}
       </button>
     );
   }
 }
 
 class Board extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      squares: Array(9).fill(null),
+    };
+  }
+  handleClick(i) {
+    const square = this.state.squares.slice()
+    square[i] = "X";
+    this.setState({ squares: square });
+  }
   renderSquare(i) {
-    return <Square />;
+    return (
+      <Square
+        value={this.state.squares[i]}
+        onClick={() => this.handleClick(i)}
+      />
+    );
   }
 
   render() {
-    const status = 'Next player: X';
+    const status = "Next player: X";
 
     return (
+
       <div>
+        <div>
+          
+        </div>
         <div className="status">{status}</div>
         <div className="board-row">
           {this.renderSquare(0)}
@@ -61,7 +104,4 @@ class Game extends React.Component {
 
 // ========================================
 
-ReactDOM.render(
-  <Game />,
-  document.getElementById('root')
-);
+ReactDOM.render(<Game />, document.getElementById("root"));
