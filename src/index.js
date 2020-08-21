@@ -1,19 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import moment from "moment";
-import Button from '@bit/reactstrap.reactstrap.button';
-
+import Button from "@bit/reactstrap.reactstrap.button";
 
 import "./index.css";
-
+import "./style.sass";
 
 class Example extends React.Component {
   render() {
     return (
       <div>
         <link
-          rel='stylesheet'
-          href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"
         />
 
         <Button>左側</Button>
@@ -22,66 +21,68 @@ class Example extends React.Component {
   }
 }
 
-class ShoppingList extends React.Component {
-  render() {
-    return (
-      <div className="shopping-list">
-        <h1>Shopping List for {this.props.name}</h1>
-        <ul>
-          <li>Instagram</li>
-          <li>WhatsApp</li>
-          <li>Oculus</li>
-          <li>私はこれから東京に行こうとおもっています</li>
-        </ul>
-      </div>
-    );
-  }
+function Square(props) {
+  return (
+    <button className="square" onClick={props.onClick}>
+      {props.value}
+    </button>
+  );
 }
-
-class Square extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: null,
-    };
-  }
-  render() {
-    return (
-      <button className="square" onClick={() => this.props.onClick()}>
-        {this.props.value}
-      </button>
-    );
-  }
-}
-console.log(moment());
+// class Squarsse extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       value: null,
+//     };
+//   }
+//   render() {
+//     return (
+//       <button className="square" onClick={() => this.props.onClick()}>
+//         {this.props.value}
+//       </button>
+//     );
+//   }
+// }
 
 class Board extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       squares: Array(9).fill(null),
+      xIsnext: true,
     };
   }
   handleClick(i) {
     const square = this.state.squares.slice();
-    square[i] = "x";
-    this.setState({ squares: square });
+    // squares[i] = this.state.xIsNext ? 'X' : 'O';
+    square[i] = "X";
+
+    this.setState({
+      squares: square,
+      xIsNext: !this.state.xIsNext,
+
+    });
+  }
+  debugobject(i) {
+    return <debug>{JSON.stringify(this.state)}</debug>;
   }
   renderSquare(i) {
     return (
       <Square
         value={this.state.squares[i]}
-        onClick={() => this.handleClick(i)}
+        onClick={() => {
+          this.handleClick(i);
+        }}
       />
     );
   }
 
   render() {
-    const status = "Next player: X";
 
+    const status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
     return (
       <div>
-        <div></div>
+        <div>{this.debugobject()}</div>
         <div className="status">{status}</div>
         <div className="board-row">
           {this.renderSquare(0)}
@@ -115,10 +116,32 @@ class Game extends React.Component {
           <ol>{/* TODO */}</ol>
         </div>
         <Example />
+        <div
+          style={{
+            width: 400,
+          }}
+        ></div>
       </div>
     );
   }
 }
+
+function tick(params) {
+  const nowtime = (
+    <div>
+      <h1>こんにちは世界</h1>
+      <p>
+        今は
+        <span>{moment().format("YYYY-MM-DD HH:mm:ss")}</span> だよ
+      </p>
+      <p contenteditable="true"> カキクケコ</p>
+    </div>
+  );
+  ReactDOM.render(nowtime, document.getElementById("nowtimes"));
+}
+setInterval(() => {
+  tick();
+}, 10);
 
 // ========================================
 
