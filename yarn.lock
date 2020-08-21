@@ -1194,6 +1194,53 @@
     prop-types "^15.6.2"
     react "^16.6.3"
 
+"@bit/react-bootstrap.react-bootstrap.button-toolbar@^1.0.0":
+  version "1.0.0"
+  resolved "https://node.bit.dev/react-bootstrap.react-bootstrap.button-toolbar/-/react-bootstrap.react-bootstrap.button-toolbar-1.0.0.tgz#5cdb69e0d2b23fdc5a038d9916d850d1ee24a48b"
+  integrity sha1-XNtp4NKyP9xaA42ZFthQ0e4kpIs=
+  dependencies:
+    "@bit/react-bootstrap.react-bootstrap.theme-provider" "1.0.0"
+    classnames "^2.2.6"
+    prop-types "^15.6.2"
+
+"@bit/react-bootstrap.react-bootstrap.button@^1.0.0":
+  version "1.0.0"
+  resolved "https://node.bit.dev/react-bootstrap.react-bootstrap.button/-/react-bootstrap.react-bootstrap.button-1.0.0.tgz#d9d20b613ff15239a279ef4bd5b7e2998a14b67d"
+  integrity sha1-2dILYT/xUjmiee9L1bfimYoUtn0=
+  dependencies:
+    "@bit/react-bootstrap.react-bootstrap.safe-anchor" "1.0.0"
+    "@bit/react-bootstrap.react-bootstrap.theme-provider" "1.0.0"
+    classnames "^2.2.6"
+    prop-types "^15.6.2"
+    prop-types-extra "^1.1.0"
+
+"@bit/react-bootstrap.react-bootstrap.create-chained-function@1.0.0":
+  version "1.0.0"
+  resolved "https://node.bit.dev/react-bootstrap.react-bootstrap.create-chained-function/-/react-bootstrap.react-bootstrap.create-chained-function-1.0.0.tgz#9323b0b32bb9e37bd805f8fb2f0e2ae42bee8ee9"
+  integrity sha1-kyOwsyu543vYBfj7Lw4q5Cvujuk=
+
+"@bit/react-bootstrap.react-bootstrap.internal.style-links@^1.0.0":
+  version "1.0.0"
+  resolved "https://node.bit.dev/react-bootstrap.react-bootstrap.internal.style-links/-/react-bootstrap.react-bootstrap.internal.style-links-1.0.0.tgz#0744bbacc68ea109c159332be641be7f54a3c3b9"
+  integrity sha1-B0S7rMaOoQnBWTMr5kG+f1Sjw7k=
+
+"@bit/react-bootstrap.react-bootstrap.safe-anchor@1.0.0":
+  version "1.0.0"
+  resolved "https://node.bit.dev/react-bootstrap.react-bootstrap.safe-anchor/-/react-bootstrap.react-bootstrap.safe-anchor-1.0.0.tgz#3ee21422deca0845002e9ebb193f567743522782"
+  integrity sha1-PuIUIt7KCEUALp67GT9Wd0NSJ4I=
+  dependencies:
+    "@bit/react-bootstrap.react-bootstrap.create-chained-function" "1.0.0"
+    prop-types "^15.6.2"
+    prop-types-extra "^1.1.0"
+
+"@bit/react-bootstrap.react-bootstrap.theme-provider@1.0.0":
+  version "1.0.0"
+  resolved "https://node.bit.dev/react-bootstrap.react-bootstrap.theme-provider/-/react-bootstrap.react-bootstrap.theme-provider-1.0.0.tgz#2efb9e8785b98187790014117bb8fc3d8086cb77"
+  integrity sha1-Lvueh4W5gYd5ABQRe7j8PYCGy3c=
+  dependencies:
+    prop-types "^15.6.2"
+    react-context-toolbox "^2.0.2"
+
 "@bit/reactstrap.reactstrap.button@^8.4.1":
   version "8.4.1"
   resolved "https://node.bit.dev/reactstrap.reactstrap.button/-/reactstrap.reactstrap.button-8.4.1.tgz#c81c3d6387b6e565b0d8689bc42648ae5f7588e8"
@@ -13507,6 +13554,11 @@ react-bootstrap@^1.3.0:
     react-transition-group "^4.4.1"
     uncontrollable "^7.0.0"
     warning "^4.0.3"
+
+react-context-toolbox@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/react-context-toolbox/-/react-context-toolbox-2.0.2.tgz#35637287cb23f801e6ed802c2bb7a97e1f04e3fb"
+  integrity sha512-tY4j0imkYC3n5ZlYSgFkaw7fmlCp3IoQQ6DxpqeNHzcD0hf+6V+/HeJxviLUZ1Rv1Yn3N3xyO2EhkkZwHn0m1A==
 
 react-dev-utils@^10.2.1:
   version "10.2.1"
