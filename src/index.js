@@ -1,7 +1,26 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import moment from 'moment';
+import moment from "moment";
+import Button from '@bit/reactstrap.reactstrap.button';
+
+
 import "./index.css";
+
+
+class Example extends React.Component {
+  render() {
+    return (
+      <div>
+        <link
+          rel='stylesheet'
+          href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'
+        />
+
+        <Button>左側</Button>
+      </div>
+    );
+  }
+}
 
 class ShoppingList extends React.Component {
   render() {
@@ -34,6 +53,7 @@ class Square extends React.Component {
     );
   }
 }
+console.log(moment());
 
 class Board extends React.Component {
   constructor(props) {
@@ -43,8 +63,8 @@ class Board extends React.Component {
     };
   }
   handleClick(i) {
-    const square = this.state.squares.slice()
-    square[i] = "X";
+    const square = this.state.squares.slice();
+    square[i] = "x";
     this.setState({ squares: square });
   }
   renderSquare(i) {
@@ -60,11 +80,8 @@ class Board extends React.Component {
     const status = "Next player: X";
 
     return (
-
       <div>
-        <div>
-          
-        </div>
+        <div></div>
         <div className="status">{status}</div>
         <div className="board-row">
           {this.renderSquare(0)}
@@ -97,6 +114,7 @@ class Game extends React.Component {
           <div>{/* status */}</div>
           <ol>{/* TODO */}</ol>
         </div>
+        <Example />
       </div>
     );
   }
